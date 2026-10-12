@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>HemoTion</title>
         <meta name="description" content="Site para facilitar o processo de doação se sangue">
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
@@ -35,7 +36,7 @@
             </section>
 
             <section>
-                <h2>Sobre nós<br><br>Conectando doadores a quem precisa</h2>
+                <h2 id="sobre-nos">Sobre nós<br><br>Conectando doadores a quem precisa</h2>
                 <p>O <strong>HemoTion</strong> conecta doadores voluntários a hemocentros de forma simples, humana e acessível. Desenvolvido como projeto acadêmico na PUC-Campinas, nasceu da urgência de enfrentar o déficit crônico de sangue no Brasil.</p>
                 <p>Acreditamos que informação clara e acesso facilitado são grandes catalisadores da doação voluntária. Juntos, podemos salvar mais vidas.</p>
                 <a href="#como-doar">Começar agora →</a></div>
@@ -45,8 +46,155 @@
                 </div>
             </section>
 
+            <section>
+                <p id="beneficios">Benefícios</p>
+                <h2>Doe sangue. Ganhe em saúde, solidariedade e propósito.</h2>
+                <div class="beneficios"">
+                    <div class="beneficio1">
+                        <p>1</p>
+                        <h3>Salva até 4 vidas</h3>
+                        <p>Cada doação pode ser fracionada em diferentes componentes, beneficiando múltiplos pacientes</p>
+                    </div>
+                    <div class="beneficio2">
+                        <p>2</p>
+                        <h3>Estimula a renovação celular</h3>
+                        <p>O organismo repõe os glóbulos vermelhos e mantém a medula óssea ativa.</p>
+                    </div>
+                    <div class="beneficio3 ">
+                        <p>3</p>
+                        <h3>Check-up gratuito de saúde</h3>
+                        <p>Antes da doação é realizada uma triagem clínica com verificações básicas de saúde.</p>
+                    </div>
+                    <div class="beneficio4">
+                        <p>4</p>
+                        <h3>Acompanhamento da saúde</h3>
+                        <p>A triagem periódica ajuda o doador a acompanhar indicadores básicos antes de cada coleta.</p>
+                    </div>
+                    <div class="beneficio5">
+                        <p>5</p>
+                        <h3>Bem-estar emocional</h3>
+                        <p>O ato solidário de ajudar outras pessoas pode gerar sensação de propósito e pertencimento.</p>
+                    </div>
+                    <div class="beneficio6">
+                        <p>6</p>
+                        <h3>Comunidade que cuida.</h3>
+                        <p>Ao doar regularmente, você participa de uma rede de cuidado que beneficia toda a comunidade.</p>
+                    </div>
+                </div>
+            </section>
 
+            <section>
+                <p id="como-doar">Como doar</p>
+                <div class="doacoes">
+                    <div class="doar1">
+                        <h2>Sua doação começa aqui. É mais simples do que parece.</h2>
+                        <p>Todo o processo dura cerca de 1 hora. A coleta em si leva apenas 10 minutos. Você receberá suporte em cada etapa.</p>
+                        <strong>Requisitos básicos</strong>
+                        <ul>
+                            <li>Ter entre 16 e 69 anos</li>
+                            <li>Pesar acima de 50 kg</li>
+                            <li>Estar em boas condições de saúde</li>
+                            <li>Ter dormido pelo menos 6 horas</li>
+                        </ul>
+                    </div>
+                    <div class="doar2">
+                        <h3>01 - Verifique os requisitos</h3>
+                        <p>Confira idade, peso e condições gerais exigidas pelo hemocentro.</p>
+                    </div>
+                    <div class="doar3">
+                        <h3>02 - Encontre um hemocentro</h3>
+                        <p>Localize uma unidade próxima. Depois esta etapa poderá usar o Leaflet.</p>
+                    </div>
+                    <div class="doar4">
+                        <h3>03 - Prepare-se para o dia</h3>
+                        <p>Alimente-se, evite bebidas alcoólicas antes da doação e durma bem.</p>
+                    </div>
+                    <div class="doar5">
+                        <h3>04 - Realize a doação</h3>
+                        <p>Siga a triagem e as orientações da equipe responsável pela coleta.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="hemocentros">
+                    <div class="hemocentro1">
+                        <h2>Encontre o hemocentro mais próximo de você</h2>
+                        <p>Mais de 1.500 unidades espalhadas por todo o Brasil.</p>
+                    </div>
+                    <div class="hemocentro2">
+                        <p><small>Campinas, SP</small>,</p>
+                        <p><strong>4</strong> <span>hemocentros disponíveis</span></p>
+                        <hr>
+                        <p>→ Hemocentro UNICAMP<br>
+                            → Hemocamp<br>
+                            → Cruz Vermelha Campinas<br>
+                            → Banco de Sangue Albert Einstein
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <p>Geolocalização</p>
+                <h2>Hemocentros próximos</h2>
+                <p>Área preparada para receber o Leaflet posteriormente.</p>
+                <button id="locationButton">Usar minha localização</button>
+                <div>
+                    <strong>Mapa interativo</strong>
+                    <p>Substitua este bloco por um mapa Leaflet quando o grupo chegar à etapa de integração.</p>
+                    <span id="locationStatus"></span>
+                </div>
+            </section>
+
+            <section>
+                <h2>Tipos Sanguíneos</h2>
+                <p>Estrutura temporária em HTML/CSS. Depois vocês podem substituir por Chart.js.</p>
+                <div>
+                    <!-- As informações de cada porcentagem estão guardadas no css ou js, então deixarei vazia -->
+                </div>
+                    <span>● Crítico</span>
+                    <span>● Alto</span>
+                    <span>● Moderado</span>
+                    <span>● Baixo</span>
+                </div>
+            </section>
+
+            <section>
+                <p id="contato">Contato</p>
+                <div class="contatos">
+                    <div class="contato1">
+                        <h2>Vamos salvar vidas juntos.</h2>
+                        <p>Tem dúvidas sobre a doação, quer se tornar parceiro ou simplesmente quer saber mais? Entre em contato com a nossa equipe.</p>
+                        <p>Email: contato@hemocentro.com</p>
+                        <p>Projeto: PUC-Campinas — Ciência da Computação</p>
+                    </div>
+                    <div class="contato2">
+                        <form>
+                            <label for="nome">Nome completo</label>
+                            <input id="nome" name="nome" type="text" placeholder="Seu nome" required>
+
+                            <label for="email">E-mail</label>
+                            <input id="email" name="email" type="email" placeholder="Seu E-mail" required>
+
+                            <label for="msg">Mensagem</label>
+                            <textarea id="msg" name="mensagem" rows="4" placeholder="Como podemos ajudar?" required></textarea>
+                            <button type="submit">Enviar mensagem</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
         </main>
+
+        <footer>
+            <a class="logo" href="#inicio">HemoTion</a>
+            <p>© 2026 HemoTion — Projeto Acadêmico PUC-Campinas.</p>
+            <nav>
+                <a href="#sobre-nos">Sobre Nós</a>
+                <a href="#beneficios">Benefícios</a>
+                <a href="#como-doar">Como Doar</a>
+            </nav>
+        </footer>
     </body>
 
 

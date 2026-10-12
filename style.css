@@ -1,0 +1,84 @@
+
+
+.beneficios {
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    grid-template-rows: repeat(2, 2fr);
+    grid-column-gap: 4px;
+    grid-row-gap: 4px;
+    border: 1px solid #999999;
+    border-radius: 3px;
+}
+
+.beneficio1 { 
+    grid-area: 1 / 1 / 2 / 2; 
+}
+.beneficio2 { 
+    grid-area: 1 / 2 / 2 / 3; 
+}
+.beneficio3 { 
+    grid-area: 1 / 3 / 2 / 4; 
+}
+.beneficio4 { 
+    grid-area: 2 / 1 / 3 / 2; 
+}
+.beneficio5 
+{ grid-area: 2 / 2 / 3 / 3; 
+}
+.beneficio6 { 
+    grid-area: 2 / 3 / 3 / 4; 
+}
+
+.doacoes {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-template-rows: repeat(2, 2fr);
+    grid-column-gap: 4px;
+    grid-row-gap: 4px;
+}
+
+.doar1 { 
+    grid-area: 1 / 1 / 6 / 2; 
+}
+.doar2 { 
+    grid-area: 1 / 2 / 2 / 3; 
+}
+.doar3 { 
+    grid-area: 2 / 2 / 3 / 3; 
+}
+.doar4 { 
+    grid-area: 3 / 2 / 4 / 3; 
+}
+.doar5 { 
+    grid-area: 4 / 2 / 5 / 3; 
+} 
+
+.hemocentros {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.hemocentro1 { 
+    grid-area: 1 / 1 / 3 / 4; 
+}
+.hemocentro2 { 
+    grid-area: 1 / 4 / 3 / 5; 
+}
+
+.contatos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.contato1 { 
+    grid-area: 1 / 1 / 3 / 2; 
+}
+.contato2 { 
+    grid-area: 1 / 2 / 2 / 3; 
+}
