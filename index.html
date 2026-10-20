@@ -5,6 +5,7 @@
         <title>HemoTion</title>
         <meta name="description" content="Site para facilitar o processo de doação se sangue">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     </head>
 
     <body>
@@ -124,12 +125,14 @@
                     </div>
                     <div class="hemocentro2">
                         <p><small>Campinas, SP</small>,</p>
-                        <p><strong>4</strong> <span>hemocentros disponíveis</span></p>
+                        <p><strong>6</strong> <span>hemocentros disponíveis</span></p>
                         <hr>
                         <p>→ Hemocentro UNICAMP<br>
-                            → Hemocamp<br>
-                            → Cruz Vermelha Campinas<br>
-                            → Banco de Sangue Albert Einstein
+                            → Hemocentro Amoreiras<br>
+                            → Pulsa São Paulo<br>
+                            → Banco de Sangue Albert Einstein<br>
+                            → Hospital Municipal Dr. Mário Gatti<br>
+                            → Hospital da PUC-Campinas
                         </p>
                     </div>
                 </div>
@@ -138,25 +141,41 @@
             <section>
                 <p>Geolocalização</p>
                 <h2>Hemocentros próximos</h2>
-                <p>Área preparada para receber o Leaflet posteriormente.</p>
+                <p>Região de Campinas, SP</p>
                 <button id="locationButton">Usar minha localização</button>
                 <div>
                     <strong>Mapa interativo</strong>
-                    <p>Substitua este bloco por um mapa Leaflet quando o grupo chegar à etapa de integração.</p>
+                    <div id="mapaHemocentros" style="height: 400px;"></div>
                     <span id="locationStatus"></span>
                 </div>
             </section>
 
             <section>
                 <h2>Tipos Sanguíneos</h2>
-                <p>Estrutura temporária em HTML/CSS. Depois vocês podem substituir por Chart.js.</p>
-                <div>
-                    <!-- As informações de cada porcentagem estão guardadas no css ou js, então deixarei vazia -->
+                <p>Índice de demanda nos Hemocentros de Campinas</p>
+
+                <div class="legenda">
+                    <span><i style="background:#c41230"></i>Crítico</span>
+                    <span><i style="background:#e05a1f"></i>Alto</span>
+                    <span><i style="background:#c07232"></i>Moderado</span>
+                    <span><i style="background:#666"></i>Baixo</span>
                 </div>
-                    <span>● Crítico</span>
-                    <span>● Alto</span>
-                    <span>● Moderado</span>
-                    <span>● Baixo</span>
+
+                <canvas id="tiposSanguineos"></canvas>
+
+                <div class="info-tipos">
+                    <div class="info-card critico">
+                        <h3>O+ e A+</h3>
+                        <p>Responsáveis por 70% das transfusões. Sempre em estado crítico de estoque.</p>
+                    </div>
+                    <div class="info-card alto">
+                        <h3>O- Universal</h3>
+                        <p>Compatível com todos os tipos. Indispensável em emergências sem triagem prévia.</p>
+                    </div>
+                    <div class="info-card baixo">
+                        <h3>AB- e B-</h3>
+                        <p>Raros, mas essenciais para pacientes com tipos negativos menos comuns.</p>
+                    </div>
                 </div>
             </section>
 
@@ -195,7 +214,9 @@
                 <a href="#como-doar">Como Doar</a>
             </nav>
         </footer>
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+          <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+          <script src="script.js"></script>
     </body>
-
 
 </HTML>
