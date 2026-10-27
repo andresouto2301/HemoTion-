@@ -1,222 +1,246 @@
 <!DOCTYPE html>
-<HTML lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <title>HemoTion</title>
-        <meta name="description" content="Site para facilitar o processo de doação se sangue">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    </head>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0808">
+  <meta name="description" content="HemoTion — projeto acadêmico sobre doação de sangue.">
+  <title>HemoTion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <body>
-        <header>
-            <a class="logo" href="#inicio">HemoTion</a>
-            <nav class="nav" id="nav">
-                <a href="#sobre-nos">Sobre Nós</a>
-                <a href="#beneficios">Benefícios</a>
-                <a href="#como-doar">Como Doar</a>
-                <a href="#contato">Contato</a>
-            </nav>
-            <a href="#contato">Quero Doar</a>
-            <button class="menu-button" id="menuButton" aria-label="Abrir menu" aria-expanded="false"></button>
-        </header>
+<header class="header" id="header">
+  <div class="container nav-wrap">
+    <a class="logo" href="#inicio">Hemo<span>Tion</span></a>
+    <nav class="nav" id="nav">
+      <a href="#sobre-nos">Sobre Nós</a>
+      <a href="#beneficios">Benefícios</a>
+      <a href="#como-doar">Como Doar</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="btn btn-small desktop-only" href="#contato">Quero Doar</a>
+    <button class="menu-button" id="menuButton" aria-label="Abrir menu" aria-controls="nav" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
 
-        <main>
-            <section>
-                <p>Projeto Acadêmico — PUC-Campinas</p>
-                <h1>Uma gota <em>salva</em> tudo.</h1>
-                <p>O sangue não pode ser fabricado. Só pode ser doado. A cada dois segundos, alguém no Brasil precisa de uma transfusão. Você pode ser a resposta.</p>
-                <div>
-                    <a href="#como-doar">Quero ser doador →</a>
-                    <a href="#sobre-nos">Saiba mais</a>
-                </div>
-                <p><strong>38 mil</strong> doações/dia necessárias no Brasil</p>
-                <p><strong>4 Vidas</strong> salvas por cada doação</p>
-                <p><strong>1,5%</strong> da população é doadora regular</p>
-                <p><strong>60 dias</strong> intervalo mínimo entre doações</p>
-            </section>
+<main>
 
-            <section>
-                <h2 id="sobre-nos">Sobre nós<br><br>Conectando doadores a quem precisa</h2>
-                <p>O <strong>HemoTion</strong> conecta doadores voluntários a hemocentros de forma simples, humana e acessível. Desenvolvido como projeto acadêmico na PUC-Campinas, nasceu da urgência de enfrentar o déficit crônico de sangue no Brasil.</p>
-                <p>Acreditamos que informação clara e acesso facilitado são grandes catalisadores da doação voluntária. Juntos, podemos salvar mais vidas.</p>
-                <a href="#como-doar">Começar agora →</a></div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=900&h=700&fit=crop&auto=format" alt="Neurônios">
-                    <p><strong>5,5M</strong><span> doações/ano necessárias no Brasil</p>
-                </div>
-            </section>
+  <section class="hero" id="inicio">
+    <div class="hero-bg"></div>
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow muted">Projeto Acadêmico — PUC-Campinas</p>
+        <h1>Uma gota <em>salva</em><br>tudo.</h1>
+        <p class="lead">O sangue não pode ser fabricado. Só pode ser doado. A cada dois segundos, alguém no Brasil precisa de uma transfusão. Você pode ser a resposta.</p>
+        <div class="actions">
+          <a class="btn" href="#como-doar">Quero ser doador →</a>
+          <a class="btn btn-outline" href="#sobre-nos">Saiba mais</a>
+        </div>
+      </div>
+      <div class="stats" id="stats"></div>
+    </div>
+    <div class="scroll-hint">Role<span></span></div>
+  </section>
 
-            <section>
-                <p id="beneficios">Benefícios</p>
-                <h2>Doe sangue. Ganhe em saúde, solidariedade e propósito.</h2>
-                <div class="beneficios"">
-                    <div class="beneficio1">
-                        <p>1</p>
-                        <h3>Salva até 4 vidas</h3>
-                        <p>Cada doação pode ser fracionada em diferentes componentes, beneficiando múltiplos pacientes</p>
-                    </div>
-                    <div class="beneficio2">
-                        <p>2</p>
-                        <h3>Estimula a renovação celular</h3>
-                        <p>O organismo repõe os glóbulos vermelhos e mantém a medula óssea ativa.</p>
-                    </div>
-                    <div class="beneficio3 ">
-                        <p>3</p>
-                        <h3>Check-up gratuito de saúde</h3>
-                        <p>Antes da doação é realizada uma triagem clínica com verificações básicas de saúde.</p>
-                    </div>
-                    <div class="beneficio4">
-                        <p>4</p>
-                        <h3>Acompanhamento da saúde</h3>
-                        <p>A triagem periódica ajuda o doador a acompanhar indicadores básicos antes de cada coleta.</p>
-                    </div>
-                    <div class="beneficio5">
-                        <p>5</p>
-                        <h3>Bem-estar emocional</h3>
-                        <p>O ato solidário de ajudar outras pessoas pode gerar sensação de propósito e pertencimento.</p>
-                    </div>
-                    <div class="beneficio6">
-                        <p>6</p>
-                        <h3>Comunidade que cuida.</h3>
-                        <p>Ao doar regularmente, você participa de uma rede de cuidado que beneficia toda a comunidade.</p>
-                    </div>
-                </div>
-            </section>
+  <section class="section" id="sobre-nos">
+    <div class="container two-col">
+      <div>
+        <p class="eyebrow">Sobre Nós</p>
+        <h2>Conectando doadores a quem precisa</h2>
+        <p>O <strong>HemoTion</strong> conecta doadores voluntários a hemocentros de forma simples, humana e acessível. Desenvolvido como projeto acadêmico na PUC-Campinas, nasceu da urgência de enfrentar o déficit crônico de sangue no Brasil.</p>
+        <p>Acreditamos que informação clara e acesso facilitado são grandes catalisadores da doação voluntária. Juntos, podemos salvar mais vidas.</p>
+        <a class="btn" href="#como-doar">Começar agora →</a>
+      </div>
+      <div class="photo-card">
+        <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=900&h=700&fit=crop&auto=format" alt="Profissional de saúde" loading="lazy">
+        <div class="badge">
+          <strong>5,5M</strong>
+          <span>doações/ano necessárias no Brasil</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            <section>
-                <p id="como-doar">Como doar</p>
-                <div class="doacoes">
-                    <div class="doar1">
-                        <h2>Sua doação começa aqui. É mais simples do que parece.</h2>
-                        <p>Todo o processo dura cerca de 1 hora. A coleta em si leva apenas 10 minutos. Você receberá suporte em cada etapa.</p>
-                        <strong>Requisitos básicos</strong>
-                        <ul>
-                            <li>Ter entre 16 e 69 anos</li>
-                            <li>Pesar acima de 50 kg</li>
-                            <li>Estar em boas condições de saúde</li>
-                            <li>Ter dormido pelo menos 6 horas</li>
-                        </ul>
-                    </div>
-                    <div class="doar2">
-                        <h3>01 - Verifique os requisitos</h3>
-                        <p>Confira idade, peso e condições gerais exigidas pelo hemocentro.</p>
-                    </div>
-                    <div class="doar3">
-                        <h3>02 - Encontre um hemocentro</h3>
-                        <p>Localize uma unidade próxima. Depois esta etapa poderá usar o Leaflet.</p>
-                    </div>
-                    <div class="doar4">
-                        <h3>03 - Prepare-se para o dia</h3>
-                        <p>Alimente-se, evite bebidas alcoólicas antes da doação e durma bem.</p>
-                    </div>
-                    <div class="doar5">
-                        <h3>04 - Realize a doação</h3>
-                        <p>Siga a triagem e as orientações da equipe responsável pela coleta.</p>
-                    </div>
-                </div>
-            </section>
+  <section class="section section-alt" id="beneficios">
+    <div class="container">
+      <div class="section-title">
+        <p class="eyebrow">Benefícios</p>
+        <h2>Doe sangue. Ganhe em saúde, solidariedade e propósito.</h2>
+      </div>
+      <div class="cards" id="benefits"></div>
+    </div>
+  </section>
 
-            <section>
-                <div class="hemocentros">
-                    <div class="hemocentro1">
-                        <h2>Encontre o hemocentro mais próximo de você</h2>
-                        <p>Mais de 1.500 unidades espalhadas por todo o Brasil.</p>
-                    </div>
-                    <div class="hemocentro2">
-                        <p><small>Campinas, SP</small>,</p>
-                        <p><strong>6</strong> <span>hemocentros disponíveis</span></p>
-                        <hr>
-                        <p>→ Hemocentro UNICAMP<br>
-                            → Hemocentro Amoreiras<br>
-                            → Pulsa São Paulo<br>
-                            → Banco de Sangue Albert Einstein<br>
-                            → Hospital Municipal Dr. Mário Gatti<br>
-                            → Hospital da PUC-Campinas
-                        </p>
-                    </div>
-                </div>
-            </section>
+  <section class="section" id="como-doar">
+    <div class="container two-col top-align">
+      <div>
+        <p class="eyebrow">Como Doar</p>
+        <h2>Sua doação começa aqui. É mais simples do que parece.</h2>
+        <p>Todo o processo dura cerca de 1 hora. A coleta em si leva apenas 10 minutos. Você receberá suporte em cada etapa.</p>
+        <div class="requirements">
+          <strong>Requisitos básicos</strong>
+          <ul>
+            <li>Ter entre 16 e 69 anos</li>
+            <li>Pesar acima de 50 kg</li>
+            <li>Estar em boas condições de saúde</li>
+            <li>Ter dormido pelo menos 6 horas</li>
+          </ul>
+        </div>
+      </div>
+      <div class="steps">
+        <article class="step">
+          <span class="step-number">01</span>
+          <div>
+            <h3>Verifique os requisitos</h3>
+            <p>Confira idade, peso e condições gerais exigidas pelo hemocentro.</p>
+          </div>
+        </article>
+        <article class="step">
+          <span class="step-number">02</span>
+          <div>
+            <h3>Encontre um hemocentro</h3>
+            <p>Localize uma unidade próxima. Depois esta etapa poderá usar o Leaflet.</p>
+          </div>
+        </article>
+        <article class="step">
+          <span class="step-number">03</span>
+          <div>
+            <h3>Prepare-se para o dia</h3>
+            <p>Alimente-se, evite bebidas alcoólicas antes da doação e durma bem.</p>
+          </div>
+        </article>
+        <article class="step">
+          <span class="step-number">04</span>
+          <div>
+            <h3>Realize a doação</h3>
+            <p>Siga a triagem e as orientações da equipe responsável pela coleta.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-            <section>
-                <p>Geolocalização</p>
-                <h2>Hemocentros próximos</h2>
-                <p>Região de Campinas, SP</p>
-                <button id="locationButton">Usar minha localização</button>
-                <div>
-                    <strong>Mapa interativo</strong>
-                    <div id="mapaHemocentros" style="height: 400px;"></div>
-                    <span id="locationStatus"></span>
-                </div>
-            </section>
+  <section class="cta">
+    <div class="container cta-wrap">
+      <div>
+        <h2>Encontre o hemocentro mais próximo de você</h2>
+        <p>Mais de 1.500 unidades espalhadas por todo o Brasil.</p>
+      </div>
+      <div class="city-card">
+        <small>Campinas, SP</small>
+        <strong>5</strong>
+        <span>hemocentros disponíveis</span>
+        <hr>
+        <p>
+          → Hemocentro Unicamp<br>
+          → Hemocentro Amoreiras<br>
+          → Pulsa São Paulo<br>
+          → Hospital Municipal Dr. Mário Gatti<br>
+          → Hospital da PUC-Campinas
+        </p>
+      </div>
+    </div>
+  </section>
 
-            <section>
-                <h2>Tipos Sanguíneos</h2>
-                <p>Índice de demanda nos Hemocentros de Campinas</p>
+  <section class="section">
+    <div class="container">
+      <div class="map-heading">
+        <div>
+          <p class="eyebrow">Geolocalização</p>
+          <h2>Hemocentros próximos</h2>
+          <p>Ative sua localização para encontrar o ponto de coleta mais próximo.</p>
+        </div>
+        <button class="btn" id="locationButton">Usar minha localização</button>
+      </div>
+      <div id="mapaHemocentros" class="hemocentros-map"></div>
+      <span id="locationStatus" class="location-status"></span>
+    </div>
+  </section>
 
-                <div class="legenda">
-                    <span><i style="background:#c41230"></i>Crítico</span>
-                    <span><i style="background:#e05a1f"></i>Alto</span>
-                    <span><i style="background:#c07232"></i>Moderado</span>
-                    <span><i style="background:#666"></i>Baixo</span>
-                </div>
+  <section class="blood-section">
+    <div class="container blood-panel">
+      <div class="map-heading">
+        <div>
+          <h2>Tipos Sanguíneos</h2>
+          <p>Índice de demanda nos hemocentros de Campinas</p>
+        </div>
+        <div class="legend">
+          <span><i style="background:#c41230"></i>Crítico</span>
+          <span><i style="background:#e05a1f"></i>Alto</span>
+          <span><i style="background:#c07232"></i>Moderado</span>
+          <span><i style="background:#666"></i>Baixo</span>
+        </div>
+      </div>
+      <canvas id="tiposSanguineos"></canvas>
 
-                <canvas id="tiposSanguineos"></canvas>
+      <div class="info-tipos">
+        <div class="info-card critico">
+          <h3>O+ e A+</h3>
+          <p>Responsáveis por 70% das transfusões. Sempre em estado crítico de estoque.</p>
+        </div>
+        <div class="info-card alto">
+          <h3>O- Universal</h3>
+          <p>Compatível com todos os tipos. Indispensável em emergências sem triagem prévia.</p>
+        </div>
+        <div class="info-card baixo">
+          <h3>AB- e B-</h3>
+          <p>Tipos sanguíneos menos comuns, mas essenciais para pacientes com necessidades específicas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                <div class="info-tipos">
-                    <div class="info-card critico">
-                        <h3>O+ e A+</h3>
-                        <p>Responsáveis por 70% das transfusões. Sempre em estado crítico de estoque.</p>
-                    </div>
-                    <div class="info-card alto">
-                        <h3>O- Universal</h3>
-                        <p>Compatível com todos os tipos. Indispensável em emergências sem triagem prévia.</p>
-                    </div>
-                    <div class="info-card baixo">
-                        <h3>AB- e B-</h3>
-                        <p>Raros, mas essenciais para pacientes com tipos negativos menos comuns.</p>
-                    </div>
-                </div>
-            </section>
+  <section class="section section-alt" id="contato">
+    <div class="container two-col top-align">
+      <div>
+        <p class="eyebrow">Contato</p>
+        <h2>Vamos salvar vidas juntos.</h2>
+        <p>Tem dúvidas sobre a doação, quer se tornar parceiro ou simplesmente quer saber mais? Entre em contato com a nossa equipe.</p>
+        <div class="contact-info">
+          <small>E-mail</small>
+          <p>contato@hemotion.com.br</p>
+          <small>Projeto</small>
+          <p>PUC-Campinas — Engenharia da Computação</p>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <label for="nome">Nome completo</label>
+        <input id="nome" name="nome" type="text" autocomplete="name" placeholder="Seu nome" required>
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="seu@email.com" required>
+        <label for="msg">Mensagem</label>
+        <textarea id="msg" name="mensagem" rows="4" placeholder="Como podemos ajudar?" required></textarea>
+        <button class="btn" type="submit">Enviar mensagem</button>
+        <p class="form-status" id="formStatus"></p>
+      </form>
+    </div>
+  </section>
 
-            <section>
-                <p id="contato">Contato</p>
-                <div class="contatos">
-                    <div class="contato1">
-                        <h2>Vamos salvar vidas juntos.</h2>
-                        <p>Tem dúvidas sobre a doação, quer se tornar parceiro ou simplesmente quer saber mais? Entre em contato com a nossa equipe.</p>
-                        <p>Email: contato@hemocentro.com</p>
-                        <p>Projeto: PUC-Campinas — Ciência da Computação</p>
-                    </div>
-                    <div class="contato2">
-                        <form>
-                            <label for="nome">Nome completo</label>
-                            <input id="nome" name="nome" type="text" placeholder="Seu nome" required>
+</main>
 
-                            <label for="email">E-mail</label>
-                            <input id="email" name="email" type="email" placeholder="Seu E-mail" required>
+<footer>
+  <div class="container footer-wrap">
+    <a class="logo" href="#inicio">Hemo<span>Tion</span></a>
+    <p>© 2026 HemoTion — Projeto Acadêmico PUC-Campinas.</p>
+    <nav>
+      <a href="#sobre-nos">Sobre Nós</a>
+      <a href="#beneficios">Benefícios</a>
+      <a href="#como-doar">Como Doar</a>
+    </nav>
+  </div>
+</footer>
 
-                            <label for="msg">Mensagem</label>
-                            <textarea id="msg" name="mensagem" rows="4" placeholder="Como podemos ajudar?" required></textarea>
-                            <button type="submit">Enviar mensagem</button>
-                        </form>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <a class="logo" href="#inicio">HemoTion</a>
-            <p>© 2026 HemoTion — Projeto Acadêmico PUC-Campinas.</p>
-            <nav>
-                <a href="#sobre-nos">Sobre Nós</a>
-                <a href="#beneficios">Benefícios</a>
-                <a href="#como-doar">Como Doar</a>
-            </nav>
-        </footer>
-          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-          <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-          <script src="script.js"></script>
-    </body>
-
-</HTML>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
